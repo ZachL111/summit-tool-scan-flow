@@ -1,0 +1,73 @@
+{
+  "repo": "summit-tool-scan-flow",
+  "language": "Python",
+  "category": "CLI tools",
+  "goal": "Package a Python local lab for scan analysis with negative fixtures, human-readable error snapshots, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "file span",
+      "terminal width",
+      "argument risk",
+      "report density"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "file span",
+      "signal": 65,
+      "slack": 22,
+      "drag": 32,
+      "confidence": 71,
+      "score": 127,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "terminal width",
+      "signal": 66,
+      "slack": 33,
+      "drag": 11,
+      "confidence": 64,
+      "score": 196,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "argument risk",
+      "signal": 59,
+      "slack": 27,
+      "drag": 12,
+      "confidence": 49,
+      "score": 158,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "report density",
+      "signal": 76,
+      "slack": 27,
+      "drag": 30,
+      "confidence": 71,
+      "score": 160,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "file span",
+      "signal": 70,
+      "slack": 31,
+      "drag": 21,
+      "confidence": 89,
+      "score": 197,
+      "lane": "ship"
+    }
+  ]
+}
